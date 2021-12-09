@@ -1,5 +1,6 @@
 const defaults = require("@wordpress/scripts/config/webpack.config");
 const path = require("path");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   ...defaults,
@@ -25,4 +26,10 @@ module.exports = {
     wpGraphiQL: "wpGraphiQL",
     graphql: "wpGraphiQL.GraphQL",
   },
+  plugins: [
+    ...defaults.plugins,
+    new CopyWebpackPlugin([
+      { from: './node_modules/graphql-voyager/dist/voyager.worker.js' },
+    ]),
+  ]
 };

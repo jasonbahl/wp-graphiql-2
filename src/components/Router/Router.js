@@ -3,6 +3,7 @@ import {
   RightOutlined,
   LeftOutlined,
   QuestionCircleOutlined,
+  DeploymentUnitOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import { useState, useEffect } from "@wordpress/element";
@@ -18,6 +19,7 @@ import {
 import GraphiQL from "../../screens/GraphiQL/GraphiQL";
 import { client } from "../../data/client";
 import gql from "graphql-tag";
+import Schema from "../../screens/Schema/Schema";
 const { useAppContext, GraphQL } = wpGraphiQL;
 const { getIntrospectionQuery, buildClientSchema } = GraphQL;
 
@@ -45,6 +47,14 @@ const getScreens = () => {
       render: () => {
         return <GraphiQL />;
       },
+    },
+    {
+      id: "schema",
+      title: "Schema",
+      icon: <DeploymentUnitOutlined />,
+      render: () => {
+        return <Schema />;
+      }
     },
     {
       id: "help",

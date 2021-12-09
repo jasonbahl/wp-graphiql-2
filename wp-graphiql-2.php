@@ -73,7 +73,8 @@ add_action( 'admin_enqueue_scripts', function() {
 			'nonce'           => wp_create_nonce( 'wp_rest' ),
 			'graphqlEndpoint' => trailingslashit( site_url() ) . 'index.php?' . \WPGraphQL\Router::$route,
 			'avatarUrl' => 0 !== get_current_user_id() ? get_avatar_url( get_current_user_id() ) : null,
-			'externalFragments' => apply_filters( 'graphiql_external_fragments', [] )
+			'externalFragments' => apply_filters( 'graphiql_external_fragments', [] ),
+			'voyagerWorkerUrl' => plugins_url( 'build/voyager.worker.js', __FILE__ ),
 		]
 	);
 
