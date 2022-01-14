@@ -140,7 +140,7 @@ export const defaultArrowClosed = (
 
 export const defaultCheckboxChecked = (
   <svg
-    style={{ marginRight: "3px", marginLeft: "-3px" }}
+    style={{ marginRight: "3px", marginLeft: "0px" }}
     width="12"
     height="12"
     viewBox="0 0 18 18"

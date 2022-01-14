@@ -8,5 +8,5 @@ window.wpGraphiQL = {
   GraphQL,
   hooks,
   useAppContext,
-  AppContextProvider,
+  AppContextProvider
 };
